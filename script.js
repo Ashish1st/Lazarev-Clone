@@ -37,4 +37,29 @@ function navAnimation() {
     })
 
 }
-navAnimation()
+// navAnimation()
+
+const rightElem = document.querySelectorAll('.right-elem')
+
+rightElem.forEach((val) => {
+    val.addEventListener('mouseenter', (e) => {
+        gsap.to(val.childNodes[3], {
+            opacity: 1,
+            scale: 1
+        })
+    })
+    val.addEventListener('mouseleave', () => {
+        gsap.to(val.childNodes[3], {
+            opacity: 0,
+            scale: 0
+        })
+    })
+
+    val.addEventListener("mousemove", (dets) => {
+        gsap.to(val.childNodes[3], {
+            x: dets.x - val.getBoundingClientRect().x - 50,
+            y: dets.y - val.getBoundingClientRect().y - 140,
+        })
+    })
+
+})
