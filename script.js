@@ -37,29 +37,32 @@ function navAnimation() {
     })
 
 }
-// navAnimation()
+navAnimation()
+function page2Animation() {
+    const rightElem = document.querySelectorAll('.right-elem')
 
-const rightElem = document.querySelectorAll('.right-elem')
-
-rightElem.forEach((val) => {
-    val.addEventListener('mouseenter', (e) => {
-        gsap.to(val.childNodes[3], {
-            opacity: 1,
-            scale: 1
+    rightElem.forEach((val) => {
+        val.addEventListener('mouseenter', (e) => {
+            gsap.to(val.childNodes[3], {
+                opacity: 1,
+                scale: 1
+            })
         })
-    })
-    val.addEventListener('mouseleave', () => {
-        gsap.to(val.childNodes[3], {
-            opacity: 0,
-            scale: 0
+        val.addEventListener('mouseleave', () => {
+            gsap.to(val.childNodes[3], {
+                opacity: 0,
+                scale: 0
+            })
         })
-    })
 
-    val.addEventListener("mousemove", (dets) => {
-        gsap.to(val.childNodes[3], {
-            x: dets.x - val.getBoundingClientRect().x - 50,
-            y: dets.y - val.getBoundingClientRect().y - 140,
+        val.addEventListener("mousemove", (dets) => {
+            gsap.to(val.childNodes[3], {
+                x: dets.x - val.getBoundingClientRect().x - 50,
+                y: dets.y - val.getBoundingClientRect().y - 140,
+            })
         })
-    })
 
-})
+    })
+}
+
+page2Animation()
